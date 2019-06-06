@@ -12,26 +12,9 @@
 	<body>
 		<!-- Simulate a smartphone / tablet -->
 		<nav>
-			<!-- Top Navigation Menu -->
-			<!-- <div class="topnav">
-				<a href="#home" class="active"
-					><img
-						src="svg/nesg_logo.svg"
-						style="width: 70px; height: 16px; margin: 0;"
-						alt="NESG Logo"
-				/></a>
-				<div id="myLinks">
-					<a href="#news">CRITERIA</a>
-					<a href="#contact">CONTACT</a>
-					<a href="#about">DOWNLOAD INSTRUCTION</a>
-				</div>
-				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-					<i class="fa fa-bars"></i>
-				</a>
-			</div> -->
 			<div class="topnav" id="myTopnav">
 				<div class="active">
-					<a href="#home"
+					<a href="index.html"
 						><img
 							src="svg/nesg_logo.svg"
 							style="width: 200px; height: 50px; margin: 0;"
@@ -41,7 +24,7 @@
 				<a class="link" href="#criteria">CRITERIA</a>
 				<a class="link" href="#form">APPLY</a>
 				<a class="link" href="#download">DOWNLOAD INSTRUCTION</a>
-				<a class="link" href="#login">LOGIN</a>
+				<a class="link" href="submit.html">SUBMIT</a>
 				<a class="link" href="mailto: info@nesgroup.org">CONTACT</a>
 				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 					<i class="fa fa-bars"></i>
@@ -160,7 +143,7 @@
 			<!-- prizes container -->
 			<section class="form-container" id="form">
 				<div class="form-details">
-					<form action="#" method="post">
+					<form name="myForm" action="/" method="post">
 						<fieldset class="row-1">
 							<legend><span class="number">1</span> Your basic info</legend>
 							<h3>
@@ -175,6 +158,17 @@
 										id="fullName"
 										name="fullName"
 										placeholder="Your full name.."
+										required
+									/>
+								</div>
+								<div class="email-col">
+									<label for="email">Email:</label>
+									<input
+										type="email"
+										id="email"
+										name="email"
+										placeholder="name@example.com.."
+										required
 									/>
 								</div>
 								<div class="gender-col">
@@ -184,6 +178,7 @@
 										id="gender"
 										name="gender"
 										placeholder="Male/Female.."
+										required
 									/>
 								</div>
 
@@ -194,6 +189,7 @@
 										id="phone"
 										name="phone"
 										placeholder="080.."
+										required
 									/>
 								</div>
 								<div class="date-col">
@@ -203,6 +199,7 @@
 										id="date"
 										name="date"
 										placeholder="dd/mm/yy"
+										required
 									/>
 								</div>
 								<div class="university-col">
@@ -212,6 +209,7 @@
 										id="university"
 										name="university"
 										placeholder="Full name (University of Lagos).."
+										required
 									/>
 								</div>
 								<div class="department-col">
@@ -221,6 +219,7 @@
 										id="department"
 										name="department"
 										placeholder="Computer Science.."
+										required
 									/>
 								</div>
 								<div class="level-col">
@@ -230,6 +229,7 @@
 										id="level"
 										name="level"
 										placeholder="100.."
+										required
 									/>
 								</div>
 								<div class="matric-col">
@@ -239,99 +239,13 @@
 										id="matric"
 										name="matric"
 										placeholder="1210.."
+										required
 									/>
 								</div>
-								<div class="email-col">
-									<label for="email">Email:</label>
-									<input
-										type="email"
-										id="email"
-										name="email"
-										placeholder="name@example.com.."
-									/>
-								</div>
-								<div class="password-col">
-									<label for="password">Password:</label>
-									<input
-										type="password"
-										id="password"
-										name="password"
-										placeholder="Choose secure password.."
-									/>
-								</div>
-								<div class="confirm-password-col">
-									<label for="confirm-password">Confirm Password:</label>
-									<input
-										type="password"
-										id="confirm-password"
-										name="confirm-password"
-										placeholder="Confirm password.."
-									/>
-								</div>
-								<div class="address-col">
-									<label for="address">Address:</label>
-									<input
-										type="text"
-										id="address"
-										name="address"
-										placeholder="Your current address.."
-									/>
-								</div>
-								<!-- <div class="university-col">
-									<label for="gender">Gender:</label>
-									<select id="gender" name="gender">
-										<option value="male">Male</option>
-										<option value="female">Female</option>
-									</select>
-								</div> -->
 							</div>
 							<!-- input-wrapper -->
 						</fieldset>
 						<!-- row-1 -->
-						<fieldset class="row-2">
-							<legend><span class="number">2</span> Essay Information</legend>
-							<div class="textarea">
-								<label for="about-textarea">About you (100 words)</label>
-								<textarea
-									name="textarea"
-									id="about-textarea"
-									cols="50"
-									rows="20"
-								>
-Enter text here...</textarea
-								>
-							</div>
-							<div class="textarea">
-								<label for="summary-textarea">Essay Summary (100 words)</label>
-								<textarea
-									name="summary-textarea"
-									id="summary-textarea"
-									cols="50"
-									rows="20"
-								>
-Enter text here...</textarea
-								>
-							</div>
-							<div class="textarea">
-								<label for="essay-textarea">Paste Essay (1500 words)</label>
-								<textarea
-									name="essay-textarea"
-									id="essay-textarea"
-									cols="50"
-									rows="50"
-								>
-Enter text here...</textarea
-								>
-							</div>
-							<label class="file">
-								<input
-									type="file"
-									id="file"
-									aria-label="File browser example"
-								/>
-								<span class="file-custom"></span>
-							</label>
-						</fieldset>
 						<button type="submit">Submit</button>
 					</form>
 				</div>
@@ -354,7 +268,8 @@ Enter text here...</textarea
 				<span>Copyright &copy; 2019 - The Nigerian Economic Summit Group</span>
 			</div>
 		</footer>
-
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="js/app.js"></script>
 	</body>
 </html>
